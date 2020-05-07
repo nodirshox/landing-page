@@ -44,16 +44,24 @@ for(var i = 0; i < section.length; i++) {
     link.appendChild(item)
     navigation.appendChild(link);
 }
-var nav = document.querySelectorAll("section");
-for (let i = 0; i < nav.length; i++) {
-    nav[i].addEventListener("wheel", function() {
-      nav[i].classList.add("your-active-class");
-    });
-}
+
+
+
 
 // Add class 'active' to section when near top of viewport
+var section = document.querySelectorAll("section");
+var activeSection = document.getElementById
 
+for (let i = 0; i < section.length; i++) {
+  section[i].addEventListener("wheel", function() {
+    section[i].classList.add("your-active-class");
+    if(section[i].previousElementSibling.classList.contains('your-active-class'))
+      section[i].previousElementSibling.classList.remove("your-active-class")
+    if(section[i].nextElementSibling != null && section[i].nextElementSibling.classList.contains('your-active-class'))
+      section[i].nextElementSibling.classList.remove("your-active-class")
 
+  });
+}
 // Scroll to anchor ID using scrollTO event
 
 
